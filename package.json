@@ -1,0 +1,20 @@
+{
+  "name": "test-parking-lot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaishalFadhil/test-parking-lot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FaishalFadhil/test-parking-lot/issues"
+  },
+  "homepage": "https://github.com/FaishalFadhil/test-parking-lot#readme"
+}
