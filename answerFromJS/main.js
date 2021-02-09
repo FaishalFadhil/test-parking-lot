@@ -19,7 +19,12 @@ if (!path) {
                 case 'park':
                     ParkingSetup.park(e[1], parkingLots)
                     break;
-            
+                case 'leave':
+                    ParkingSetup.leave(e[1], e[2], parkingLots)
+                    break;
+                case 'status':
+                    ParkingSetup.status(parkingLots)
+                    break;
                 default:
                     break;
             }
