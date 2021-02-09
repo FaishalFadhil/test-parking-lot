@@ -60,10 +60,11 @@ class ParkingSetup {
     } else {
       if (!carNum) {
         return 'invalid car input';
-      } else if(!hours) {
+      } else if(!Number(hours)) {
         return 'invalid hours input';
+      } else {
+        return 'Parking Lot is not ready'; 
       }
-      return 'Parking Lot is not ready'; 
     }
   }
 
