@@ -43,7 +43,7 @@ class ParkingSetup {
     let payment
     let noSlot
     let leave = false
-    if (parkingLots.length != 0 && carNum && hours) {
+    if (parkingLots.length != 0 && carNum && Number(hours)) {
       for (let i = 0; i < parkingLots.length; i++) {
         if (parkingLots[i].carNumber === carNum) {
           payment = parkingLots[i].charge(hours)
