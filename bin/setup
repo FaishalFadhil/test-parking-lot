@@ -12,3 +12,6 @@ cd $DIR
 cd ..
 
 npm install
+npm test
+bin/run_functional_tests
+bin/parking_lot
