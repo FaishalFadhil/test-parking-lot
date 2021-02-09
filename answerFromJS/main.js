@@ -14,7 +14,10 @@ if (!path) {
             switch (e[0]) {
                 case 'create_parking_lot':
                     parkingLots = ParkingSetup.create(e[1])
-                    console.log('ini parkir', parkingLots);
+                    console.log('ini', parkingLots);
+                    break;
+                case 'park':
+                    ParkingSetup.park(e[1], parkingLots)
                     break;
             
                 default:
