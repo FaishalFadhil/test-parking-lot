@@ -14,4 +14,4 @@ cd ..
 npm install
 npm test
 bin/run_functional_tests
-bin/parking_lot
+bin/parking_lot functional_spec/fixtures/file_input.txt
