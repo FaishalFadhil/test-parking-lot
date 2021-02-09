@@ -9,12 +9,10 @@ if (!path) {
         if (err) console.log('invalid path to file');
         const arrData = data.split('\n').map(e => e.split(' '))
         let parkingLots
-        // console.log(arrData);
         arrData.map(e => {
             switch (e[0]) {
                 case 'create_parking_lot':
                     parkingLots = ParkingSetup.create(e[1])
-                    console.log('ini', parkingLots);
                     break;
                 case 'park':
                     ParkingSetup.park(e[1], parkingLots)

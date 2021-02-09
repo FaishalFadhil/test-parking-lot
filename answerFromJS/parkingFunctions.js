@@ -54,9 +54,10 @@ class ParkingSetup {
         }
       }
       if (!leave) {
-        console.log(`no car with num ${carNum} parked here`);
+        console.log(`Registration number ${carNum} not found`);
+      } else {
+        console.log(`Registration number ${carNum} with Slot Number ${noSlot} is free with Charge ${payment}`);
       }
-      console.log(`Registration number ${carNum} with Slot Number ${noSlot} is free with Charge ${payment}`);
     } else {
       if (!carNum) {
         console.log('invalid car input');
@@ -70,7 +71,7 @@ class ParkingSetup {
   static status(parkingLots){
   
     if (parkingLots.length != 0) {
-      console.log('Slot No.     Registration No.');
+      console.log('Slot No.    Registration No.');
       for (let i = 0; i < parkingLots.length; i++) {
         if (parkingLots[i].carNumber != '') {
           console.log(parkingLots[i].list);
