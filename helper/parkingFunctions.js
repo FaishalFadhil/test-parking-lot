@@ -7,10 +7,9 @@ class ParkingSetup {
       for (let i = 0; i < Number(value); i++) {
         listParking.push(new ParkingLot(i+1))
       }
-      console.log(`Created parking lot with ${value} slots`);
-      return listParking
+      return [`Created parking lot with ${value} slots`, listParking]
     } else {
-      console.log(error); 
+      return  'invalid value'
     }
   }
 
@@ -27,15 +26,15 @@ class ParkingSetup {
         }
       }
       if (parked) {
-        console.log(`Allocated slot number: ${noSlot}`);
+        return `Allocated slot number: ${noSlot}`;
       } else {
-        console.log('Sorry, parking lot is full');
+        return 'Sorry, parking lot is full';
       }
     } else {
       if (!carNum) {
-        console.log('invalid car input');
+        return 'invalid car input';
       }
-      console.log('Parking Lot is not ready'); 
+      return 'Parking Lot is not ready'; 
     }
   }
 
@@ -54,31 +53,32 @@ class ParkingSetup {
         }
       }
       if (!leave) {
-        console.log(`Registration number ${carNum} not found`);
+        return `Registration number ${carNum} not found`;
       } else {
-        console.log(`Registration number ${carNum} with Slot Number ${noSlot} is free with Charge ${payment}`);
+        return `Registration number ${carNum} with Slot Number ${noSlot} is free with Charge ${payment}`;
       }
     } else {
       if (!carNum) {
-        console.log('invalid car input');
+        return 'invalid car input';
       } else if(!hours) {
-        console.log('invalid hours input');
+        return 'invalid hours input';
       }
-      console.log('Parking Lot is not ready'); 
+      return 'Parking Lot is not ready'; 
     }
   }
 
   static status(parkingLots){
   
     if (parkingLots.length != 0) {
-      console.log('Slot No.    Registration No.');
+      const result = ['Slot No.    Registration No.']
       for (let i = 0; i < parkingLots.length; i++) {
         if (parkingLots[i].carNumber != '') {
-          console.log(parkingLots[i].list);
+          result.push(parkingLots[i].list);
         }
       }
+      return result
     } else {
-      console.log('Parking Lot is not ready'); 
+      return 'Parking Lot is not ready'; 
     }
   }
 }

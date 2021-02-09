@@ -12,16 +12,29 @@ function mainFunction(path) {
           arrData.map(e => {
               switch (e[0]) {
                   case 'create_parking_lot':
-                      parkingLots = ParkingSetup.create(e[1])
+                      let makeParking = ParkingSetup.create(e[1])
+                      if (Array.isArray(makeParking)) {
+                          parkingLots = makeParking[1]
+                          console.log(makeParking[0]);
+                      } else {
+                          console.log(makeParking);
+                      }
                       break;
                   case 'park':
-                      ParkingSetup.park(e[1], parkingLots)
+                      let parkingProgress = ParkingSetup.park(e[1], parkingLots)
+                      console.log(parkingProgress);
                       break;
                   case 'leave':
-                      ParkingSetup.leave(e[1], e[2], parkingLots)
+                      let leaveProgress = ParkingSetup.leave(e[1], e[2], parkingLots)
+                      console.log(leaveProgress);
                       break;
                   case 'status':
-                      ParkingSetup.status(parkingLots)
+                      let statusParking = ParkingSetup.status(parkingLots)
+                      if (Array.isArray(statusParking)) {
+                          statusParking.map(e => console.log(e))
+                      } else {
+                          console.log(statusParking);
+                      }
                       break;
                   default:
                       console.log('invalid command');
